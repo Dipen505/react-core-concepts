@@ -8,14 +8,14 @@ function App() {
     Job: "Singer"
   }
   const personStyle = {
-    
+    border: "1px solid blue",
+    backgroundColor: "red",
+    borderRadius: "5px"
   }
   return (
     <div className="App">
       <header className="App-header">
-        <h1 style = {{border: "1px solid blue",
-    backgroundColor: "red",
-    borderRadius: "5px"}}>Name: {`${person.name} ${person.Job}`}</h1>
+        <h1 style = {personStyle}>Name: {`${person.name} ${person.Job}`}</h1>
 
       </header>
     </div>
