@@ -8,7 +8,8 @@ function App() {
     {name: "Amazon", price: "$20", validiy: "3 month"},
     {name: "Facebook", price: "$40", validiy: "6 month"},
     {name: "Twitter", price: "$40", validiy: "7 month"},
-    {name: "Google", price: "$60", validiy: "9 month"}
+    {name: "Google", price: "$60", validiy: "9 month"},
+    {name: "Microsoft", price: "$600", validiy: "1 year"}
   ]
   const students = ["Dipen","Anwar","Hannah","Noyon"];
   return (
@@ -18,10 +19,9 @@ function App() {
       {
         students.map(student=><li>{student}</li>)
       }
-      <Products detail = {products[0]}></Products>
-      <Products detail = {products[1]}></Products>
-      <Products detail = {products[2]}></Products>
-      <Products detail = {products[3]}></Products>
+      {
+        products.map(product=><Products detail = {product}></Products>)
+      }
       </header>
     </div>
   );
