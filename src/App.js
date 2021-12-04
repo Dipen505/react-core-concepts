@@ -7,19 +7,31 @@ function App() {
     name: "Dipen",
     Job: "Singer"
   }
-  const personStyle = {
-    border: "1px solid blue",
-    backgroundColor: "red",
-    borderRadius: "5px"
-  }
   return (
     <div className="App">
       <header className="App-header">
-        <h1 style = {personStyle}>Name: {`${person.name} ${person.Job}`}</h1>
-
+      <Person profile = {person}></Person>
+      <Person profile = {person}></Person>
+      <Person profile = {person}></Person>
+      <Person profile = {person}></Person>
       </header>
     </div>
   );
+}
+function Person(props) {
+  console.log(props);
+  const personStyle = {
+    border: "1px solid blue",
+    backgroundColor: "red",
+    borderRadius: "5px",
+    margin: "5px"
+  }
+  return (
+    <div style = {personStyle}>
+      <h1>Name: {props.profile.name}</h1>
+      <h5>Hero of the year</h5>
+    </div>
+  )
 }
 
 
