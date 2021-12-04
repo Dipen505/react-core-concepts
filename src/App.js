@@ -3,20 +3,21 @@ import './App.css';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const person = {
-    name: "Dipen",
-    Job: "Singer"
-  }
   const products = [
     {name: "Adobe", price: "$10", validiy: "1 month"},
     {name: "Amazon", price: "$20", validiy: "3 month"},
     {name: "Facebook", price: "$40", validiy: "6 month"},
-    {name: "Twitter", price: "$40", validiy: "7 month"}
+    {name: "Twitter", price: "$40", validiy: "7 month"},
+    {name: "Google", price: "$60", validiy: "9 month"}
   ]
+  const students = ["Dipen","Anwar","Hannah","Noyon"];
   return (
     <div className="App">
       <header className="App-header">
-      <Person profile = {person}></Person>   
+        <h1>List item of name</h1>
+      {
+        students.map(student=><li>{student}</li>)
+      }
       <Products detail = {products[0]}></Products>
       <Products detail = {products[1]}></Products>
       <Products detail = {products[2]}></Products>
@@ -24,20 +25,6 @@ function App() {
       </header>
     </div>
   );
-}
-function Person(props) {
-  const personStyle = {
-    border: "1px solid blue",
-    backgroundColor: "red",
-    borderRadius: "5px",
-    margin: "5px"
-  }
-  return (
-    <div style = {personStyle}>
-      <h1>Name: {props.profile.name}</h1>
-      <h5>Hero of the year</h5>
-    </div>
-  )
 }
 function Products (props) {
   const {name,price,validiy} = props.detail;
